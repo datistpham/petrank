@@ -33,13 +33,26 @@
                     Giá tiền: ${result.cost}đ
                 </div>
                 <br>
-                <div style="padding: 12px 24px; background-color: orange; border-radius: 10px; cursor: pointer">
+                <div onclick="addToCart()" style="padding: 12px 24px; background-color: orange; border-radius: 10px; cursor: pointer">
                     Thêm vào giỏ hàng
                 </div>
             </div>
         `
     }
     getDetailProduct()
+    const addToCart= async ()=> {
+        const res= await axios({
+            url: "http://localhost:3001/api/v1/add/to/cart",
+            method: "post",
+            responseType: "json",
+            data: {
+                id_user: Cookies.get("uid"),
+                id_product: window.location.pathname.split("/")[2].toString()
+            }
+        })
+        const result= await res.data
+        window.location.href= "http://localhost:3001/user/cart"
+    }
 </script>
 <div class="fdkokopwakwopewe">
     
