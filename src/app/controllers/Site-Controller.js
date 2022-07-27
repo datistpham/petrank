@@ -2,7 +2,7 @@ import Product from "../model/Product.js";
 import User from "../model/User.js";
 
 class SiteController {
-  index(req, res) {
+  index(req, res,next) {
     Product.find({})
       .then((products) => {
         products = products.map((product) => product.toObject());
@@ -11,7 +11,7 @@ class SiteController {
       .catch((error) => next(error));
   }
 
-  search(req, res) {
+  search(req, res, next) {
     Product.find({ name: { $regex: req.body.q } })
       .then((products) => {
         products = products.map((product) => product.toObject());

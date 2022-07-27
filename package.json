@@ -9,20 +9,11 @@
     "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Imagination-98/nodejs-web.git"
-  },
   "keywords": [
     "nodejs",
     "backend"
   ],
-  "author": "NamBN",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Imagination-98/nodejs-web/issues"
-  },
-  "homepage": "https://github.com/Imagination-98/nodejs-web#readme",
   "dependencies": {
     "bluebird": "^3.7.2",
     "core-js": "^3.23.5",

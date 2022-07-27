@@ -52,5 +52,8 @@ router.get("/forget/password", (req, res)=> {
 router.get("/search", (req, res)=> {
     res.render("search")
 })
+router.get("/", (req, res)=> {
+    res.render("home")
+})
 
 export default router

@@ -3,7 +3,6 @@ import morgan from "morgan"
 import path from "path"
 import handlebars from "express-handlebars"
 import route from "./routes/index.js"
-import db from "./config/db/index.js"
 import methodOverride from "method-override"
 import { fileURLToPath } from 'url';
 import router from "./routes/RouteForApi/fullApi.js"
@@ -16,7 +15,6 @@ const port = 3001
 app.use(methodOverride('_method'))
 
 //Connect DB
-db()
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({
